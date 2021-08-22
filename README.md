@@ -22,7 +22,7 @@ But instead I get:
 
 ---
 
-Raymond Camden (Thank you very much Raymond), noticed that both tags pages are still paginating over collections, not collections.sights or collections.sights;
+Raymond Camden (Thank you very much Raymond), noticed that both tags pages are still paginating over collections, not collections.sights or collections.sounds;
 once I've tried to resolve the pagination as above - which is the right change - I get errors.
 
 Raymond noticed that this is because it's exposing another error: the issue is that permalink, as I have it, cannot use dynamic data like that, 
