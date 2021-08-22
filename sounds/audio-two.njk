@@ -1,0 +1,25 @@
+---
+layout: layouts/post.njk
+
+local: en
+
+date: 2021-07-24
+title: Audio 2 Title
+details: Audio promo, 2020
+
+tags:
+  - Audio Two tag
+  - audio skit
+  - audio tag 2
+---
+
+      <div>
+      <h2>Audio Two</h2>
+
+      <p>This article is about audio two</p>
+      <p>Tagged:
+        {% for item in tags %}
+        <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        {% endfor %}
+      </p>
+      </div>

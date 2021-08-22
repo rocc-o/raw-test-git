@@ -1,0 +1,25 @@
+---
+layout: layouts/post.njk
+
+local: en
+
+date: 2021-07-06
+title: Video Test One
+details: Ident, 2019
+
+tags:
+  - Video One tag
+  - ident 1 video
+  - one video tag
+---
+
+      <div>
+      <h2>Video One</h2>
+
+      <p>This is a video article</p>
+      <p>Tagged:
+        {% for item in tags %}
+        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        {% endfor %}
+      </p>
+      </div>

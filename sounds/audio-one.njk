@@ -1,0 +1,25 @@
+---
+layout: layouts/post.njk
+
+local: en
+
+date: 2021-07-24
+title: Audio 1 Title
+details: Audio promo, 2021
+
+tags:
+  - Audio One tag
+  - audio promo
+  - audio tag 1
+---
+
+      <div>
+      <h2>Audio One</h2>
+
+      <p>This article is about audio one</p>
+      <p>Tagged:
+        {% for item in tags %}
+        <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        {% endfor %}
+      </p>
+      </div>

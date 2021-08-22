@@ -1,0 +1,23 @@
+
+{% if postListItems.length %}
+
+    {% for item in postListItems %}
+
+
+<!-- this is a list of posts which serves the pagination and tag overview pages -->
+
+
+<!-- START articles -->
+                       <article>
+                              <div>
+                              <a href="{{ item.url }}">
+                              <p>{% if item.data.date %}<time datetime="{{ item.data.date | dateymd }}">{{ item.data.date | datefriendly }}</time>{% endif %}</p>
+                              <h2>{{ item.data.title }}</h2>
+                              <p>{{ item.data.details }}</p></a>
+                              </div>
+                       </article>
+<!-- END articles -->
+
+        {% endfor %}
+
+    {% endif %}

@@ -1,0 +1,25 @@
+---
+layout: layouts/post.njk
+
+local: en
+
+date: 2021-07-09
+title: Video Test Three
+details: Docu, 2020
+
+tags:
+  - Video Three tag
+  - docu video
+  - another video tag
+---
+
+      <div>
+      <h2>Video Three</h2>
+
+      <p>This is a video article</p>
+      <p>Tagged:
+        {% for item in tags %}
+        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        {% endfor %}
+      </p>
+      </div>

@@ -1,0 +1,38 @@
+---
+local: en
+
+title: Archive
+pagination:
+  data: collections.sounds
+  size: 2
+  alias: sounds
+---
+<!-- index of all articles - list of all posts with pagination links  -->
+<!-- I will remove "title: Archive" from front matter cause I don't need it -->
+
+{% extends 'layouts/base.njk' %}
+
+{% set postListItems = pagination.items %}
+
+{% block content %}
+
+
+  <!-- START articles cards -->
+          <div>
+        {% include "partials/components/post-list.njk" %} <!-- list of articles -->
+          </div>
+  <!-- END articles cards -->
+
+        {% include "partials/components/pagination.njk" %}
+
+  <div>
+  <p>
+<!-- PROBLEM -->      
+<!-- outputs tags. Should be all tags for collection.sounds only, but outputs also all collections.sights tags - I don't want this to happen and I have to find a solution -->
+  {% for tag in collections.tagsList %}
+      <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
+  {% endfor %}
+  </p>
+  </div>
+
+    {% endblock %}
