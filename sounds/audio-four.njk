@@ -8,18 +8,19 @@ title: Audio 4 Title
 details: Audio record, 2017
 
 tags:
-  - Audio Four tag
-  - audio check
-  - audio tag 4
+  - audio four.1
+  - audio four.2
+  - audio four.3
+  - audio four.4
 ---
 
-      <div>
-      <h2>Audio Four</h2>
+<div>
+  <h2>Audio Four</h2>
 
-      <p>This article is about audio four</p>
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
-        {% endfor %}
-      </p>
-      </div>
+  <p>This article is about audio four</p>
+  <p>Tagged:
+    {% for item in tags %}
+    <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
+    {% endfor %}
+  </p>
+</div>

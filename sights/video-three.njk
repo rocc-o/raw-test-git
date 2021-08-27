@@ -8,18 +8,18 @@ title: Video Test Three
 details: Docu, 2020
 
 tags:
-  - Video Three tag
-  - docu video
-  - another video tag
+  - video three.1
+  - video three.2
+  - video three.3
 ---
 
-      <div>
-      <h2>Video Three</h2>
+<div>
+  <h2>Video Three</h2>
 
-      <p>This is a video article</p>
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
-        {% endfor %}
-      </p>
-      </div>
+  <p>This is a video article</p>
+  <p>Tagged:
+    {% for item in tags %}
+    <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
+    {% endfor %}
+  </p>
+</div>

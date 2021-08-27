@@ -1,0 +1,29 @@
+{
+  "name": "raw-test-git",
+  "version": "1.0.0",
+  "description": "This blog project is running on my local machine with Eleventy v0.12.1 and Node v14.16.1",
+  "main": ".eleventy.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "prettier": "npx prettier _site --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocc-o/raw-test-git.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rocc-o/raw-test-git/issues"
+  },
+  "homepage": "https://github.com/rocc-o/raw-test-git#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
