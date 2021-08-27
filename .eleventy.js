@@ -1,11 +1,41 @@
 module.exports = function (eleventyConfig) {
+  const now = Date.now();
+  const livePosts = (post) => post.date <= now;
+
+  eleventyConfig.addFilter("tagsList", (arr = []) => {
+    const tagsSet = new Set();
+    arr.forEach((item) => item.data.tags?.forEach((tag) => tagsSet.add(tag)));
+    return [...tagsSet].sort((b, a) => b.localeCompare(a));
+  });
+
+  eleventyConfig.addFilter("inspect", require("util").inspect);
+
   // SIGHTS - custom collections
-  const nowsights = new Date();
-  const sightslivePosts = (post) => post.date <= nowsights;
   eleventyConfig.addCollection("sights", (collection) => {
-    return [
-      ...collection.getFilteredByGlob("./sights/*.njk").filter(sightslivePosts),
-    ].reverse();
+    const posts = collection.getFilteredByGlob("./sights/*.njk");
+    return [...posts].filter(livePosts).reverse();
+  });
+
+  // SOUNDS - custom collections
+  eleventyConfig.addCollection("sounds", (collection) => {
+    const posts = collection.getFilteredByGlob("./sounds/*.njk");
+    return [...posts].filter(livePosts).reverse();
+  });
+
+  eleventyConfig.addCollection("sightsTagsList", (collection) => {
+    const tagsListFilter = eleventyConfig.getFilter("tagsList");
+    const items = collection
+      .getFilteredByGlob("./sights/*.njk")
+      .filter(livePosts);
+    return tagsListFilter(items);
+  });
+
+  eleventyConfig.addCollection("soundsTagsList", (collection) => {
+    const tagsListFilter = eleventyConfig.getFilter("tagsList");
+    const items = collection
+      .getFilteredByGlob("./sounds/*.njk")
+      .filter(livePosts);
+    return tagsListFilter(items);
   });
 
   eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
@@ -14,32 +44,6 @@ module.exports = function (eleventyConfig) {
     }
     return arr.slice(0, idx);
   });
-
-  eleventyConfig.addFilter("tagsList", (arr = []) => {
-    const tagsSet = new Set();
-    arr.forEach((item) => item.data.tags?.forEach((tag) => tagsSet.add(tag)));
-    return [...tagsSet].sort((b, a) => b.localeCompare(a));
-  });
-
-  // SOUNDS - custom collections
-  const nowsounds = new Date();
-  const soundslivePosts = (post) => post.date <= nowsounds;
-  eleventyConfig.addCollection("sounds", (collection) => {
-    return [
-      ...collection.getFilteredByGlob("./sounds/*.njk").filter(soundslivePosts),
-    ].reverse();
-  });
-
-  // generate a list of all tags collections
-  // with alphabetical sorting - had to invert to "b, a" because it was sorting upside down
-  // eleventyConfig.addCollection('tagsList', (collectionApi) => {
-  //   const tagsSet = new Set()
-  //   collectionApi.getAll().forEach((item) => {
-  //     if (!item.data.tags) return
-  //     item.data.tags.forEach((tag) => tagsSet.add(tag))
-  //   })
-  //   return  [...tagsSet].sort((b, a) => b.localeCompare(a))
-  // });
 
   // https://www.11ty.dev/docs/copy/#manual-passthrough-file-copy-(faster)
   eleventyConfig.addPassthroughCopy("assets");

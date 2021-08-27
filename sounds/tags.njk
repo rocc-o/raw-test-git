@@ -1,18 +1,13 @@
 ---
-local: en
-
+local: "en"
 pagination:
-  data: collections
+  data: "collections.soundsTagsList"
   size: 1
-  alias: tag
-  filter:
-  - all
-  - sights
-  - sounds
-  - tagsList
+  alias: "tag"
   addAllPagesToCollections: true
 permalink: "/sounds/tags/{{ tag | slug }}/"
 ---
+
 <!-- this should be tag archive for SOUNDS category only -->
 <!-- This will create a page for every tag -->
 
@@ -22,21 +17,19 @@ permalink: "/sounds/tags/{{ tag | slug }}/"
 {% set postListItems = collections[tag] %}
 
 {% block content %}
-
-<!-- START articles -->
-        <div class="article-cards-row">
+  <!-- START articles -->
+  <div class="article-cards-row">
     {% include "partials/components/post-list.njk" %}<!-- list of articles -->
-            </div>
-<!-- END articles -->
+  </div>
+  <!-- END articles -->
 
-<div>
-<p>
-  <!-- PROBLEM -->
-  <!-- outputs tags. Should be all tags for collection.sounds only, but outputs also all collections.sights tags - I don't want this to happen and I have to find a solution -->  
-{% for tag in collections.sounds | tagsList %}
-    <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
-{% endfor %}
-</p>
-</div>
-
+  <div>
+    <p>
+    <!-- PROBLEM -->
+    <!-- outputs tags. Should be all tags for collection.sounds only, but outputs also all collections.sights tags - I don't want this to happen and I have to find a solution -->  
+    {% for tag in collections.soundsTagsList %}
+      <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{ tag }}</a>
+    {% endfor %}
+    </p>
+  </div>
 {% endblock %}

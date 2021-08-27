@@ -8,18 +8,18 @@ title: Video Test Two
 details: Ident, 2021
 
 tags:
-  - Video Two tag
-  - ident video
-  - this video tag
+  - video two.1
+  - video two.2
+  - video two.3
 ---
 
-      <div>
-      <h2>Video Two</h2>
+<div>
+  <h2>Video Two</h2>
 
-      <p>This is a video article</p>
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
-        {% endfor %}
-      </p>
-      </div>
+  <p>This is a video article</p>
+  <p>Tagged:
+    {% for item in tags %}
+    <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
+    {% endfor %}
+  </p>
+</div>

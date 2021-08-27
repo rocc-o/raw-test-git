@@ -8,18 +8,17 @@ title: Audio 2 Title
 details: Audio promo, 2020
 
 tags:
-  - Audio Two tag
-  - audio skit
-  - audio tag 2
+  - audio two.1
+  - audio two.2
 ---
 
-      <div>
-      <h2>Audio Two</h2>
+<div>
+  <h2>Audio Two</h2>
 
-      <p>This article is about audio two</p>
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
-        {% endfor %}
-      </p>
-      </div>
+  <p>This article is about audio two</p>
+  <p>Tagged:
+    {% for item in tags %}
+    <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
+    {% endfor %}
+  </p>
+</div>

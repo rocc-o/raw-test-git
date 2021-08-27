@@ -25,12 +25,10 @@ But instead I get:
 Raymond Camden (Thank you very much Raymond), noticed that both tags pages are still paginating over collections, not collections.sights or collections.sounds;
 once I've tried to resolve the pagination as above - which is the right change - I get errors.
 
-Raymond noticed that this is because it's exposing another error: the issue is that permalink, as I have it, cannot use dynamic data like that, 
+Raymond noticed that this is because it's exposing another error: the issue is that permalink, as I have it, cannot use dynamic data like that,
 and he suggested a workaround: to use eleventyComputed to define the permalink (https://www.11ty.dev/docs/data-computed/#using-a-template-string).
 
 After several attempts there are still errors. Is clear that the problem is my incompetence in how to remove the dynamic value from the front matter.
 
-You can see my original question and suggestions from Raymond Camden on: 
+You can see my original question and suggestions from Raymond Camden on:
 https://stackoverflow.com/questions/68814674/eleventy-11ty-tag-list-sorting-for-2-independent-directories
-
-

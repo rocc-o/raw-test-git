@@ -8,18 +8,17 @@ title: Video Test Four
 details: Promo, 2020
 
 tags:
-  - Video Four tag
-  - promo video
-  - a video tag
+  - video four.1
+  - video four.2
 ---
 
-      <div>
-      <h2>Video Four</h2>
+<div>
+  <h2>Video Four</h2>
 
-      <p>This is a video article</p>
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
-        {% endfor %}
-      </p>
-      </div>
+  <p>This is a video article</p>
+  <p>Tagged:
+    {% for item in tags %}
+    <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
+    {% endfor %}
+  </p>
+</div>
