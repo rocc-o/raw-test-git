@@ -11,7 +11,7 @@ pagination:
   - sounds
   - tagsList
   addAllPagesToCollections: true
-permalink: /sounds/tags/{{ tag | slug }}/
+permalink: "/sounds/tags/{{ tag | slug }}/"
 ---
 <!-- this should be tag archive for SOUNDS category only -->
 <!-- This will create a page for every tag -->
@@ -33,7 +33,7 @@ permalink: /sounds/tags/{{ tag | slug }}/
 <p>
   <!-- PROBLEM -->
   <!-- outputs tags. Should be all tags for collection.sounds only, but outputs also all collections.sights tags - I don't want this to happen and I have to find a solution -->  
-{% for tag in collections.tagsList %}
+{% for tag in collections.sounds | tagsList %}
     <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
 {% endfor %}
 </p>
