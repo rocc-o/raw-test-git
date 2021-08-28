@@ -18,21 +18,21 @@ pagination:
 
 
   <!-- START articles -->
-          <div>
-        {% include "partials/components/post-list.njk" %} <!-- list of articles -->
-          </div>
+  <div>
+    {% include "partials/components/post-list.njk" %} <!-- list of articles -->
+  </div>
   <!-- END articles -->
 
         {% include "partials/components/pagination.njk" %}
 
   <div>
-  <p>
-<!-- PROBLEM -->
-<!-- outputs tags. Should be all tags for collection.sights only, but outputs also all collections.sounds tags - I don't want this to happen and I have to find a solution -->
-  {% for tag in collections.tagsList %}
+    <p>
+      <!-- PROBLEM -->
+      <!-- outputs tags. Should be all tags for collection.sights only, but outputs also all collections.sounds tags - I don't want this to happen and I have to find a solution -->
+      {% for tag in collections.sightsTagsList %}
       <a href="/sights/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
-  {% endfor %}
-  </p>
+      {% endfor %}
+    </p>
   </div>
 
-    {% endblock %}
+{% endblock %}

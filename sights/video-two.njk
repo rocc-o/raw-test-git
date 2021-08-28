@@ -8,9 +8,9 @@ title: Video Test Two
 details: Ident, 2021
 
 tags:
-  - Video Two tag
-  - ident video
-  - this video tag
+  - Video Two
+  - ident
+  - clip
 ---
 
       <div>
@@ -19,7 +19,7 @@ tags:
       <p>This is a video article</p>
       <p>Tagged:
         {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
         {% endfor %}
       </p>
-      </div>
+    </div>

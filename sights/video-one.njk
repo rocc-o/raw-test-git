@@ -8,9 +8,9 @@ title: Video Test One
 details: Ident, 2019
 
 tags:
-  - Video One tag
-  - ident 1 video
-  - one video tag
+  - Video One
+  - documentary
+  - soul
 ---
 
       <div>
@@ -19,7 +19,7 @@ tags:
       <p>This is a video article</p>
       <p>Tagged:
         {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag"> {{ item }} </a>
+        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
         {% endfor %}
       </p>
-      </div>
+    </div>
