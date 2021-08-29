@@ -14,23 +14,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("inspect", require("util").inspect);
 
 
-
   // SIGHTS - custom collections
-
   eleventyConfig.addCollection("sights", (collection) => {
     const posts = collection.getFilteredByGlob("./sights/*.njk");
     return [...posts].filter(livePosts).reverse();
   });
 
   // SOUNDS - custom collections
-
   eleventyConfig.addCollection("sounds", (collection) => {
     const posts = collection.getFilteredByGlob("./sounds/*.njk");
     return [...posts].filter(livePosts).reverse();
   });
 
-  // generate a list of all tags collections
-  // with alphabetical sorting - had to invert to "b, a" because it was sorting upside down
+  // generate list of tags respectively for Sights and Sounds
   eleventyConfig.addCollection("sightsTagsList", (collection) => {
     const tagsListFilter = eleventyConfig.getFilter("tagsList");
     const items = collection
@@ -38,7 +34,6 @@ module.exports = function (eleventyConfig) {
       .filter(livePosts);
     return tagsListFilter(items);
   });
-
 
   eleventyConfig.addCollection("soundsTagsList", (collection) => {
     const tagsListFilter = eleventyConfig.getFilter("tagsList");
@@ -49,12 +44,15 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
-    if (idx < 0) {
-      return arr.slice(idx);
-    }
-    return arr.slice(0, idx);
-  });
+  // "You can probably ignore this. I think it was from the index.njk and was throwing errors saying there wasn't a "head" filter,
+  // so I took a random guess. But then ended up using Nunjucks comments to comment out those code blocks anyways."
+  // https://github.com/rocc-o/raw-test-git/pull/1
+  //  eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
+  //    if (idx < 0) {
+  //      return arr.slice(idx);
+  //    }
+  //    return arr.slice(0, idx);
+  //  });
 
 
   // https://www.11ty.dev/docs/copy/#manual-passthrough-file-copy-(faster)
