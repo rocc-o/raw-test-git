@@ -2,46 +2,29 @@
 eleventyExcludeFromCollections: true
 layout: _pages-layout.njk
 local: en
+
+eleventyNavigation:
+  key: Home
+  order: 1
 ---
 
 <h1>HOMEPAGE</h1>
 
-<!--
+{# Trying to output latest 4 post for each collection: sights and sounds #}
 
-TO DO
+<h2>Latest articles in Sights</h2>
+{# START articles #}
+    {% set postslist = collections.sightsTagsList | head(-4) %}
+    {% set postslistCounter = collections.sightsTagsList | length %}
+    {% include "partials/components/post-list.njk" %}
+{# END articles #}
 
-Here I want to FILTER RECENT POSTS
-respectively for categories SIGHTS + SOUNDS with the latest 4 posts for each category
 
-I think that I have to create 2 custom sorted collections (one for SIGHTS and one for SOUNDS)
-and slice array to filter the number of recent posts on each collection
+<h2>Latest articles in Sounds</h2>
+{# START articles #}
+    {% set postslist = collections.soundsTagsList | head(-4) %}
+    {% set postslistCounter = collections.soundsTagsList | length %}
+    {% include "partials/components/post-list.njk" %}
+{# END articles #}
 
-Maybe I can try as follows:
-
-// eleventy.js
-eleventyConfig.addCollection("latestSights", function(collection) {
-    return collection.getAllSorted().reverse().slice(0, 4);
-});
-eleventyConfig.addCollection("LatestSounds", function(collection) {
-    return collection.getAllSorted().reverse().slice(0, 4);
-});
-
-and something like this here on homepage:
-
-{% set postslist = collections.latestSights | head(-4) %}
-{% set postslistCounter = collections.latestSights | length %}
-{% include "partials/components/post-list.njk" %}
-
-{% set postslist = collections.latestSounds | head(-4) %}
-{% set postslistCounter = collections.latestSounds | length %}
-{% include "partials/components/post-list.njk" %}
-
-N.B. Maybe I will have also to put this in front matter
-as explained here: https://github.com/11ty/eleventy/issues/503 ( pdkaizer commented on 25 Apr 2019 )
-
-pagination:
-data: collections... // the problem here is that I can specify only 1 collection and I have two of them to output on this page: how to solve this?
-size: 4
-reverse: true
-
- -->
+{# but I get Error: filter not found: head #}
