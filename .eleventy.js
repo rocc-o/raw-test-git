@@ -47,12 +47,12 @@ module.exports = function (eleventyConfig) {
   // "You can probably ignore this. I think it was from the index.njk and was throwing errors saying there wasn't a "head" filter,
   // so I took a random guess. But then ended up using Nunjucks comments to comment out those code blocks anyways."
   // https://github.com/rocc-o/raw-test-git/pull/1
-  //  eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
-  //    if (idx < 0) {
-  //      return arr.slice(idx);
-  //    }
-  //    return arr.slice(0, idx);
-  //  });
+    eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
+      if (idx < 0) {
+        return arr.slice(idx);
+      }
+    return arr.slice(0, idx);
+  });
 
 
   // https://www.11ty.dev/docs/copy/#manual-passthrough-file-copy-(faster)
