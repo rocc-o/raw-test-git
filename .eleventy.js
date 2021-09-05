@@ -50,15 +50,28 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  // "You can probably ignore this. I think it was from the index.njk and was throwing errors saying there wasn't a "head" filter,
-  // so I took a random guess. But then ended up using Nunjucks comments to comment out those code blocks anyways."
-  // https://github.com/rocc-o/raw-test-git/pull/1
+  // for Latest Articles on homepage
+  // this is for index.njk throwing errors saying there is not a "head" filter
     eleventyConfig.addFilter("head", (arr = [], idx = 0) => {
       if (idx < 0) {
         return arr.slice(idx);
       }
-    return arr.slice(0, idx);
-  });
+      return arr.slice(0, idx);
+    });
+
+
+   // Contributors
+   // https://github.com/cfjedimaster/eleventy-demos/tree/master/multiauthor
+   // https://www.raymondcamden.com/2020/08/24/supporting-multiple-authors-in-an-eleventy-blog
+   eleventyConfig.addFilter("getContributor", (contributors,label) => {
+ 		let contributor = contributors.filter(a => a.key === label)[0];
+ 		return contributor;
+ 	});
+
+ 	eleventyConfig.addFilter("getPostsByContributor", (posts,contributor) => {
+ 		return posts.filter(a => a.data.contributor === contributor);
+ 	});
+
 
 
   // https://www.11ty.dev/docs/copy/#manual-passthrough-file-copy-(faster)
