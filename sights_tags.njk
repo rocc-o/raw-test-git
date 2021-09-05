@@ -8,9 +8,6 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/sights/tags/{{ tag | slug }}/"
 ---
-<!-- this should be tag archive for SIGHTS category only -->
-<!-- This will create a page for every tag -->
-
 
 {% extends 'layouts/base.njk' %}
 
@@ -18,16 +15,16 @@ permalink: "/sights/tags/{{ tag | slug }}/"
 
 {% block content %}
 
-<!-- START articles -->
-        <div>
-    {% include "partials/components/post-list.njk" %}<!-- list of articles -->
-  </div>
-  <!-- END articles -->
+{# START articles #}
+<div>
+  {% include "partials/components/post-list.njk" %}
+</div>
+{# END articles #}
+
+{{ tags | no_posts | inspect | safe }}
 
   <div>
     <p>
-      <!-- PROBLEM -->
-      <!-- outputs tags. Should be all tags for collection.sights only, but outputs also all collections.sounds tags - I don't want this to happen and I have to find a solution -->
       {% for tag in collections.sightsTagsList %}
       <a href="/sights/tags/{{ tag | slug }}" class="tags">{{ tag }}</a>
       {% endfor %}

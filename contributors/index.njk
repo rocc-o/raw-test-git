@@ -1,0 +1,14 @@
+---
+layout: _pages-layout.njk
+local: en
+---
+
+        <h1 class="below-title">Contributors</h1>
+
+<p>Our contributors</p>
+
+<ul>
+{% for contributor in contributors %}
+<li><a href="/contributors/{{ contributor.name | slug }}/">{{ contributor.name }}</a></li>
+{% endfor %}
+</ul>

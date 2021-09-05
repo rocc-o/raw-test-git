@@ -11,12 +11,18 @@ tags:
   - Audio One
   - live session
   - jazz-funk
+  - post
+
+contributor: andrea
 ---
 
       <div>
       <h2>Audio One</h2>
 
       <p>This article is about audio one</p>
+
+{{ tags | no_posts | inspect | safe }}
+
       <p>Tagged:
         {% for item in tags %}
         <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>

@@ -1,0 +1,23 @@
+[
+	{
+		"key":"gertrude",
+		"name":"Gertrude Vacher",
+		"bio": "My doubt about json is how to write in html paragraphs, italic, bold, links, ecc.?",
+		"website":"https://www.sattamassagana.com",
+		"twitter":"noramar"
+	},
+	{
+		"key":"andrea",
+		"name":"Andrea Berardi",
+		"bio":"There are other options better than json to write html tags in text?",
+		"website":"https://funk.com/",
+		"twitter":"funk"
+	},
+	{
+		"key":"johnny",
+		"name":"John Doe",
+		"bio":"some bio here",
+		"website":"https://jazz.com/",
+		"twitter":"jazz"
+	}
+]

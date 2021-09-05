@@ -11,12 +11,18 @@ tags:
   - Audio Three
   - recordings
   - funk
+  - post
+
+contributor: gertrude
 ---
 
       <div>
       <h2>Audio Three</h2>
 
       <p>This article is about audio three</p>
+
+{{ tags | no_posts | inspect | safe }}
+
       <p>Tagged:
         {% for item in tags %}
         <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>

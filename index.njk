@@ -1,5 +1,4 @@
 ---
-eleventyExcludeFromCollections: true
 layout: _pages-layout.njk
 local: en
 ---
@@ -8,14 +7,13 @@ local: en
 
 
 <h2>Latest articles in Sights</h2>
-{# START articles #}
+
 {% set postListItems = collections.sights | head(-4) %}
 {% include "partials/components/post-list.njk" %}
-{# END articles #}
+
 
 
 <h2>Latest articles in Sounds</h2>
-{# START articles #}
+
 {% set postListItems = collections.sounds | head(-4) %}
 {% include "partials/components/post-list.njk" %}
-{# END articles #}

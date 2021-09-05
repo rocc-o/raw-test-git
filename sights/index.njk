@@ -7,8 +7,6 @@ pagination:
   size: 2
   alias: sights
 ---
-<!-- index of all articles - list of all posts with pagination links  -->
-<!-- I will remove "title: Archive" from front matter cause I don't need it -->
 
 {% extends 'layouts/base.njk' %}
 
@@ -16,19 +14,18 @@ pagination:
 
 {% block content %}
 
-
-  <!-- START articles -->
+  {# START articles #}
   <div>
-    {% include "partials/components/post-list.njk" %} <!-- list of articles -->
+    {% include "partials/components/post-list.njk" %}
   </div>
-  <!-- END articles -->
+  {# END articles #}
 
         {% include "partials/components/pagination.njk" %}
 
+{{ tags | no_posts | inspect | safe }}
+
   <div>
     <p>
-      <!-- PROBLEM -->
-      <!-- outputs tags. Should be all tags for collection.sights only, but outputs also all collections.sounds tags - I don't want this to happen and I have to find a solution -->
       {% for tag in collections.sightsTagsList %}
       <a href="/sights/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
       {% endfor %}

@@ -11,12 +11,18 @@ tags:
   - Audio Two
   - mixtape
   - hip hop
+  - post
+
+contributor: johnny
 ---
 
       <div>
       <h2>Audio Two</h2>
 
       <p>This article is about audio two</p>
+
+{{ tags | no_posts | inspect | safe }}
+
       <p>Tagged:
         {% for item in tags %}
         <a href="/sounds/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>

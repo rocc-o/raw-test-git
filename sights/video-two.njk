@@ -11,12 +11,18 @@ tags:
   - Video Two
   - ident
   - clip
+  - post
+
+contributor: andrea  
 ---
 
       <div>
       <h2>Video Two</h2>
 
       <p>This is a video article</p>
+
+{{ tags | no_posts | inspect | safe }}
+
       <p>Tagged:
         {% for item in tags %}
         <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>

@@ -14,6 +14,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("inspect", require("util").inspect);
 
 
+
+  //
+  eleventyConfig.addFilter("no_posts", (values=[]) => values.filter(value => value !== "post"));
+
+
+
   // SIGHTS - custom collections
   eleventyConfig.addCollection("sights", (collection) => {
     const posts = collection.getFilteredByGlob("./sights/*.njk");
