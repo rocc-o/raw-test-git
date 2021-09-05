@@ -2,14 +2,14 @@
 	{
 		"key":"gertrude",
 		"name":"Gertrude Vacher",
-		"bio": "My doubt about json is how to write in html paragraphs, italic, bold, links, ecc.?",
+		"bio": "My doubt about json is how to write html</p><p><em>This is italic</em>, <strong>this is bold</strong>, <a href=\"#\">this is link</a>",
 		"website":"https://www.sattamassagana.com",
 		"twitter":"noramar"
 	},
 	{
 		"key":"andrea",
 		"name":"Andrea Berardi",
-		"bio":"There are other options better than json to write html tags in text?",
+		"bio":"There are other options better than json?",
 		"website":"https://funk.com/",
 		"twitter":"funk"
 	},
