@@ -23,14 +23,14 @@ permalink: "/sounds/tags/{{ tag | slug }}/"
 </div>
 {# END articles #}
 
-{{ tags | no_posts | inspect | safe }}
-
-  <div>
-    <p>
-    {% for tag in collections.soundsTagsList %}
-      <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{ tag }}</a>
-    {% endfor %}
-    </p>
-  </div>
+<div class="footer-tags">
+<p>
+{% for tag in collections.soundsTagsList %}
+  {%- if tag !== "post" %}
+    <a href="/sounds/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
+  {%- endif %}
+{% endfor %}
+</p>
+</div>
 
 {% endblock %}

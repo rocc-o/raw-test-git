@@ -21,11 +21,12 @@ contributor: andrea
 
       <p>This is a video article</p>
 
-{{ tags | no_posts | inspect | safe }}
-
-      <p>Tagged:
-        {% for item in tags %}
-        <a href="/sights/tags/{{ item | slug }}" class="tags article-tag">{{ item }}</a>
-        {% endfor %}
+      <p>
+      {%- for item in tags %}
+        {%- if item !== "post" %}
+          <a href="/sights/tags/{{ item | slug }}" class="tags"> {{ item }} </a>
+        {%- endif %}
+      {%- endfor %}
       </p>
+
     </div>

@@ -22,14 +22,14 @@ pagination:
 
         {% include "partials/components/pagination.njk" %}
 
-{{ tags | no_posts | inspect | safe }}
-
-  <div>
-    <p>
-      {% for tag in collections.sightsTagsList %}
-      <a href="/sights/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
-      {% endfor %}
-    </p>
-  </div>
+        <div class="footer-tags">
+        <p>
+        {% for tag in collections.sightsTagsList %}
+          {%- if tag !== "post" %}
+            <a href="/sights/tags/{{ tag | slug }}" class="tags">{{tag}}</a>
+          {%- endif %}
+        {% endfor %}
+        </p>
+        </div>
 
 {% endblock %}
