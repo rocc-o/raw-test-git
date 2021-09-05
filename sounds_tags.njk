@@ -5,6 +5,8 @@ pagination:
   data: "collections.soundsTagsList"
   size: 1
   alias: "tag"
+  filter:
+  - post
   addAllPagesToCollections: true
 permalink: "/sounds/tags/{{ tag | slug }}/"
 ---

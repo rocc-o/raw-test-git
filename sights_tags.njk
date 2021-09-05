@@ -5,6 +5,8 @@ pagination:
   data: collections.sightsTagsList
   size: 1
   alias: tag
+  filter:
+  - post   
   addAllPagesToCollections: true
 permalink: "/sights/tags/{{ tag | slug }}/"
 ---
