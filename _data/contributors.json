@@ -2,7 +2,7 @@
 	{
 		"key":"gertrude",
 		"name":"Gertrude Vacher",
-		"bio": "My doubt about json is how to write html</p><p><em>This is italic</em>, <strong>this is bold</strong>, <a href=\"#\">this is link</a>",
+		"bio": "My doubt about json is how can I write html. <em>This is italic</em>, <strong>this is bold</strong>, <a href=\"#\">this is link</a>",
 		"website":"https://www.sattamassagana.com",
 		"twitter":"noramar"
 	},
