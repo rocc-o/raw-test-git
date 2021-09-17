@@ -1,0 +1,26 @@
+---
+layout: _below-layout.njk
+contributor: andrea
+---
+
+{% if contributor %}
+{% set myContributor = contributors | getContributor(contributor) %}
+
+<h2>{{ myContributor.name }}</h2>
+
+<p>{{ myContributor.bio }}</p>
+
+<p>
+Website: <a href="https://{{ myContributor.website }}" target="_blank" rel="noopener noreferrer">{{ myContributor.website }}</a><br>
+Twitter: <a href="https://twitter.com/{{ myContributor.twitter }}" target="_blank" rel="noopener noreferrer">@{{ myContributor.twitter }}</a>
+</p>
+
+<h3>Articles by {{ myContributor.name }}</h3>
+{% set posts = collections.post | getPostsByContributor(myContributor.key) %}
+<ul>
+{% for post in posts | reverse %}
+	<li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; <time datetime="{{ post.data.date | dateymd }}">{{ post.data.date | datefriendly }}</time></li>
+{% endfor %}
+</ul>
+
+{% endif %}
