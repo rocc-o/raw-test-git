@@ -20,7 +20,7 @@ Twitter: <a href="https://twitter.com/{{ myContributor.twitter }}" target="_blan
 </p>
 
 <h3>Articles by {{ myContributor.name }}</h3>
-{% set posts = collections.post | getPostsByContributor(myContributor.key) %}
+{% set posts = collections.contributor_andrea %}
 <ul>
 {% for post in posts | reverse %}
 	<li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; <time datetime="{{ post.data.date | dateymd }}">{{ post.data.date | datefriendly }}</time></li>
