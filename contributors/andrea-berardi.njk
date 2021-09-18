@@ -1,6 +1,10 @@
 ---
 layout: _below-layout.njk
 contributor: andrea
+pagination:
+  size: 2
+  alias: contributorPosts
+  data: "collections.contributor_andrea"
 ---
 
 {% if contributor %}
@@ -22,5 +26,7 @@ Twitter: <a href="https://twitter.com/{{ myContributor.twitter }}" target="_blan
 	<li><a href="{{ post.url }}">{{ post.data.title }}</a> &mdash; <time datetime="{{ post.data.date | dateymd }}">{{ post.data.date | datefriendly }}</time></li>
 {% endfor %}
 </ul>
+
+        {% include "partials/components/pagination.njk" %}
 
 {% endif %}

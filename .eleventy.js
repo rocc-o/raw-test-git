@@ -68,6 +68,18 @@ module.exports = function (eleventyConfig) {
 
 
 
+  // create custom collections for each contributor
+  // in order to paginate each contributor's articles on his contributor's page
+  const contributors = require("./_data/contributors.json");
+  for (const contributor of contributors) {
+  eleventyConfig.addCollection(`contributor_${contributor.key}`, (collectionApi) => {
+    return collectionApi.getFilteredByTag("post")
+      .filter(post => post.data.contributor === contributor.key);
+  });
+}
+
+
+
   // https://www.11ty.dev/docs/copy/#manual-passthrough-file-copy-(faster)
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
