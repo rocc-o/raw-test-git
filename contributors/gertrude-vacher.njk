@@ -12,10 +12,10 @@ pagination:
 
 <h2>{{ myContributor.name }}</h2>
 
-<p>{{ myContributor.bio }}</p>
+<p>{{ myContributor.bio | safe }}</p>
 
 <p>
-Website: <a href="https://{{ myContributor.website }}" target="_blank" rel="noopener noreferrer">{{ myContributor.website }}</a><br>
+Website: <a href="{{ myContributor.website }}" target="_blank" rel="noopener noreferrer">{{ myContributor.website }}</a><br>
 Twitter: <a href="https://twitter.com/{{ myContributor.twitter }}" target="_blank" rel="noopener noreferrer">@{{ myContributor.twitter }}</a>
 </p>
 
