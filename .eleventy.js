@@ -72,11 +72,12 @@ module.exports = function (eleventyConfig) {
   // in order to paginate each contributor's articles on his contributor's page
   const contributors = require("./_data/contributors.json");
   for (const contributor of contributors) {
-  eleventyConfig.addCollection(`contributor_${contributor.key}`, (collectionApi) => {
-    return collectionApi.getFilteredByTag("post")
-      .filter(post => post.data.contributor === contributor.key);
-  });
-}
+    eleventyConfig.addCollection(`contributor_${contributor.key}`, (collectionApi) => {
+      return collectionApi.getFilteredByTag("post")
+        .filter(post => post.data.contributor === contributor.key)
+        .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+    });
+  }
 
 
 
