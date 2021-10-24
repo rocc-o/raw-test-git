@@ -1,0 +1,23 @@
+{
+  "name": "raw-test",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "eleventy-critical-css": "^0.2.4",
+    "html-minifier": "^4.0.0",
+    "imagemin": "^8.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webp": "^6.0.0",
+    "luxon": "^2.0.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
