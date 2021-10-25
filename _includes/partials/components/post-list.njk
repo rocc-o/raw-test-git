@@ -2,6 +2,11 @@
 {% if postListItems.length %}
 
 {% for item in postListItems %}
+
+
+{% if item.data.category === category %} {# for "/sights/sights.11tydata.js" and "/sights/sights.11tydata.js"
+                                            https://github.com/11ty/eleventy/issues/2048 #}
+
 <!-- this is a list of posts which serves the pagination and tag overview pages -->
 <!-- START articles -->
 <article>
@@ -14,5 +19,8 @@
   </div>
 </article>
 <!-- END articles -->
+
+{% endif %} {# END of "/sights/sights.11tydata.js" and "/sights/sights.11tydata.js" #}
+
 {% endfor %}
 {% endif %}
