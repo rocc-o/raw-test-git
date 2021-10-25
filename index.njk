@@ -9,6 +9,7 @@ local: en
 <h2>Latest articles in Sights</h2>
 
 {% set postListItems = collections.sights | head(4) %}
+{% set category = "sights" %}
 {% include "partials/components/post-list.njk" %}
 
 
@@ -16,4 +17,5 @@ local: en
 <h2>Latest articles in Sounds</h2>
 
 {% set postListItems = collections.sounds | head(4) %}
+{% set category = "sounds" %}
 {% include "partials/components/post-list.njk" %}
