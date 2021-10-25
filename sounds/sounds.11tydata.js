@@ -1,1 +1,3 @@
-category: "sounds"
+module.exports = {
+  category: "sounds"
+};

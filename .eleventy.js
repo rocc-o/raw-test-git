@@ -2,6 +2,11 @@
 module.exports = function (eleventyConfig) {
 
 
+  // for "/sights/sights.11tydata.js" and "/sights/sights.11tydata.js"
+  // https://github.com/11ty/eleventy/issues/2048
+    eleventyConfig.setDataDeepMerge(true);
+
+
   const now = Date.now();
   const livePosts = (post) => post.date <= now;
 

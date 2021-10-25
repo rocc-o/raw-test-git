@@ -1,1 +1,3 @@
-category: "sights"
+module.exports = {
+  category: "sights"
+};
